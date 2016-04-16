@@ -1,9 +1,9 @@
-import React from "react";
-import ReactDom from "react-dom";
+import React from 'react';
+import ReactDOM from 'react-dom';
 
-import TodoApp = require('./components/TodoApp.react');
+import TodoApp from './components/TodoApp.react';
 
-ReactDom.render(
+ReactDOM.render(
   <TodoApp />,
-  document.getElementById('todoapp')
+  document.getElementById("todoapp")
 );
