@@ -26,7 +26,6 @@ class FormApp extends React.Component {
 
 class FormSend extends React.Component {
   send(e) {
-    console.log(this);
     e.preventDefault();
     var testValue = ReactDOM.findDOMNode(this.refs.test_value).value.trim();
     FormAction.act(testValue);
