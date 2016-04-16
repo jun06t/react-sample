@@ -1,5 +1,5 @@
 import React from 'react';
-import ReactDom from 'react-dom';
+import ReactDOM from 'react-dom';
 
 import FormAction from './action/formAction.jsx';
 import FormStore from './store/formStore.jsx';
@@ -11,7 +11,7 @@ class FormApp extends React.Component {
   }
   componentDidMount() {
     FormStore.addChangeListener(() => {
-      this.setState(TestStore.getAll());
+      this.setState(FormStore.getAll());
     });
   }
   render() {
@@ -25,15 +25,12 @@ class FormApp extends React.Component {
 }
 
 class FormSend extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-
   send(e) {
+    console.log(this);
     e.preventDefault();
-    var testValue = ReactDom.findDOMNode(this.refs.test_value).value.trim();
+    var testValue = ReactDOM.findDOMNode(this.refs.test_value).value.trim();
     FormAction.act(testValue);
-    ReactDom.findDOMNode(this.refs.test_value).value = "";
+    ReactDOM.findDOMNode(this.refs.test_value).value = "";
     return;
   }
 
@@ -41,7 +38,7 @@ class FormSend extends React.Component {
     return (
       <form>
         <input type="text" ref="test_value" />
-        <button onClick={this.send}>送信</button>
+        <button onClick={this.send.bind(this)}>送信</button>
       </form>
     );
   }
@@ -56,7 +53,7 @@ class FormDisplay extends React.Component {
   }
 }
 
-ReactDom.render(
+ReactDOM.render(
   <FormApp />,
   document.getElementById("content")
 );
