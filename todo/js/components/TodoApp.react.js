@@ -17,11 +17,11 @@ class TodoApp extends React.Component {
   }
 
   componentDidMount() {
-    TodoStore.addChangeListener(this._onChange);
+    TodoStore.addChangeListener(this._onChange.bind(this));
   }
 
   componentWillUnmount() {
-    TodoStore.removeChangeListener(this._onChange);
+    TodoStore.removeChangeListener(this._onChange.bind(this));
   }
 
   render() {
