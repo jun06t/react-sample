@@ -1,6 +1,6 @@
 import React from 'react';
 import TodoActions from '../actions/TodoActions';
-import TodoTextImput from './TodoTextInput.react';
+import TodoTextInput from './TodoTextInput.react';
 import classNames from 'classnames';
 var ReactPropTypes = React.PropTypes;
 
@@ -19,7 +19,7 @@ class TodoItem extends React.Component {
       input =
         <TodoTextInput
           className="edit"
-          onSave={this._onSave}
+          onSave={this._onSave.bind(this)}
           value={todo.text}
         />;
     }
@@ -35,12 +35,12 @@ class TodoItem extends React.Component {
             className="toggle"
             type="checkbox"
             checked={todo.complete}
-            onChange={this._onToggleComplete}
+            onChange={this._onToggleComplete.bind(this)}
           />
-          <label onDoubleClick={this._onDoubleClick}>
+          <label onDoubleClick={this._onDoubleClick.bind(this)}>
             {todo.text}
           </label>
-          <button className="destroy" onClick={this._onDestroyClick} />
+          <button className="destroy" onClick={this._onDestroyClick.bind(this)} />
         </div>
         {input}
       </li>

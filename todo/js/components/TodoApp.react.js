@@ -7,6 +7,7 @@ import Footer from './Footer.react';
 function getTodoState() {
   return {
     allTodos: TodoStore.getAll(),
+    areAllComplete: TodoStore.areAllComplete()
   };
 }
 
@@ -28,6 +29,10 @@ class TodoApp extends React.Component {
     return (
       <div>
         <Header />
+        <MainSection
+          allTodos={this.state.allTodos}
+          areAllComplete={this.state.areAllComplete}
+        />
         <Footer allTodos={this.state.allTodos} />
       </div>
     );
