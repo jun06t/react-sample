@@ -1,6 +1,7 @@
 import React from 'react';
 import CounterStore from '../stores/store.jsx';
 import CounterDisplay from './display.jsx';
+import CounterCount from './count.jsx';
 
 class CounterApp extends React.Component {
   constructor(props) {
@@ -16,6 +17,7 @@ class CounterApp extends React.Component {
     return (
       <div>
         <CounterDisplay data={this.state.value} />
+        <CounterCount />
       </div>
     );
   }
