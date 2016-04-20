@@ -1,4 +1,4 @@
-import CounterDispathcer from '../dispatcher/dispatcher.jsx';
+import CounterDispathcer from '../dispatcher/dispatcher';
 
 var CounterActions = {
   increment: function() {

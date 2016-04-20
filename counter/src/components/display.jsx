@@ -1,10 +1,13 @@
 import React from 'react';
 
 class CounterDisplay extends React.Component {
+  constructor(props) {
+    super(props);
+  }
   render() {
     return (
       <div>
-        {this.props.data}
+        <h1>{this.props.data}</h1>
       </div>
     );
   }

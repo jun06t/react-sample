@@ -1,5 +1,5 @@
 import React from 'react';
-import CounterStore from '../stores/store.jsx';
+import CounterStore from '../stores/store';
 import CounterDisplay from './display.jsx';
 import CounterCount from './count.jsx';
 
@@ -9,10 +9,18 @@ class CounterApp extends React.Component {
     this.state = CounterStore.getAll();
   }
   componentDidMount() {
-    CounterStore.addChangeListener(() => {
-      this.setState(CounterStore.getAll());
-    })
+    CounterStore.addChangeListener(this._onChange.bind(this));
   }
+
+  componentWillUnmount() {
+    CounterStore.removeChangeListener(this._onChange.bind(this));
+  }
+
+  _onChange() {
+    var v = CounterStore.getAll();
+    this.setState(v);
+  }
+
   render() {
     return (
       <div>

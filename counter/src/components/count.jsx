@@ -1,5 +1,5 @@
 import React from 'react';
-import CounterActions from '../actions/action.jsx'
+import CounterActions from '../actions/action'
 
 class CounterCount extends React.Component {
   render() {
@@ -18,4 +18,4 @@ class CounterCount extends React.Component {
   }
 }
 
-module.expores = CounterCount;
+module.exports = CounterCount;

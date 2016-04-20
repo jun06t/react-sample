@@ -1,4 +1,4 @@
-import CounterDispatcher from '../dispatcher/dispatcher.jsx';
+import CounterDispatcher from '../dispatcher/dispatcher';
 import Events from 'events';
 import assign from 'object-assign';
 
@@ -25,6 +25,9 @@ var CounterStore = assign({}, EventEmitter.prototype, {
   },
   addChangeListener: function(callback) {
     this.on('change', callback);
+  },
+  removeChangeListener: function() {
+    this.removeListener('change', callback);
   }
 });
 
