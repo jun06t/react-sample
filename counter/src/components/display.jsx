@@ -1,4 +1,5 @@
 import React from 'react';
+var ReactPropTypes = React.PropTypes;
 
 class CounterDisplay extends React.Component {
   constructor(props) {
@@ -12,5 +13,9 @@ class CounterDisplay extends React.Component {
     );
   }
 }
+
+CounterDisplay.propTypes = {
+  data: ReactPropTypes.number.isRequired
+};
 
 module.exports = CounterDisplay;

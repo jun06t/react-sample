@@ -1,4 +1,4 @@
-import AppDispatcher from '../dispatcher/dispatcher.jsx';
+import AppDispatcher from '../dispatcher/dispatcher';
 
 var FormAction = {
   act: function (value) {

@@ -1,7 +1,6 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 
-import FormStore from '../store/formStore.jsx';
+import FormStore from '../store/formStore';
 import FormSend from './send.jsx'
 import FormDisplay from './display.jsx'
 

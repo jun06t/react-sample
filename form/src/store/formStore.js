@@ -1,4 +1,4 @@
-import AppDispatcher from '../dispatcher/dispatcher.jsx';
+import AppDispatcher from '../dispatcher/dispatcher';
 import Events from 'events';
 import assign from 'object-assign';
 

@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import FormAction from '../action/formAction.jsx';
+import FormAction from '../action/formAction';
 
 class FormSend extends React.Component {
   send(e) {
