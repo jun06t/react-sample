@@ -1,8 +1,8 @@
-import React from 'react';
+import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
 import FormAction from '../action/formAction';
 
-class FormSend extends React.Component {
+class FormSend extends Component {
   send(e) {
     e.preventDefault();
     var testValue = ReactDOM.findDOMNode(this.refs.test_value).value.trim();

@@ -1,6 +1,6 @@
-import React from 'react';
+import React, {Component} from 'react';
 
-class FormDisplay extends React.Component {
+class FormDisplay extends Component {
   render() {
     var message = this.props.data;
     return (

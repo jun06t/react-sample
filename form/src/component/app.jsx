@@ -1,10 +1,10 @@
-import React from 'react';
+import React, {Component} from 'react';
 
 import FormStore from '../store/formStore';
 import FormSend from './send.jsx'
 import FormDisplay from './display.jsx'
 
-class FormApp extends React.Component {
+class FormApp extends Component {
   constructor(props) {
     super(props);
     this.state = FormStore.getAll();
